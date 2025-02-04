@@ -4,7 +4,7 @@ import { CardsRoutingModule } from './cards-routing.module';
 import { CardListComponent } from './card-list/card-list.component';
 
 @NgModule({
-  declarations: [CardListComponent],
-  imports: [CommonModule, CardsRoutingModule]
+  declarations: [],
+  imports: [CommonModule, CardsRoutingModule, CardListComponent]
 })
 export class CardsModule {}

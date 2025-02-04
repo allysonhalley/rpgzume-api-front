@@ -1,5 +1,6 @@
 export interface Card {
   id: string;
+  type: string;
   name: string;
   resume: string;
   description: string;
