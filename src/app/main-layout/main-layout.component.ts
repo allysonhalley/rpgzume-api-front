@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,7 +26,7 @@ import { CommonModule } from '@angular/common';
 export class MainLayoutComponent {
   sidebarOpened = true;
 
-  toggleSidebar() {
-    this.sidebarOpened = !this.sidebarOpened;
+  toggleSidebar(sidenav: MatSidenav) {
+    sidenav.toggle();
   }
 }
