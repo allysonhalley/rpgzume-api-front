@@ -2,14 +2,14 @@ import axios from 'axios';
 import { Injectable } from '@angular/core';
 import { Magic } from '../models/models';
 
-const API_BASE_URL = 'http://localhost:8080/magics';
+const API_BASE_URL = 'http://localhost:8080/api/magics';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MagicService {
-  async getAllMagics(page = 0, size = 20) {
-    return axios.get(`${API_BASE_URL}?page=${page}&size=${size}`);
+  async getAllMagics() {
+    return axios.get(`${API_BASE_URL}`);
   }
 
   async getMagicById(id: string) {

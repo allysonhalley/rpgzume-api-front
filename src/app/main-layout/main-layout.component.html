@@ -1,26 +1,10 @@
-<mat-sidenav-container class="app-container">
-  <!-- Sidebar Fixo -->
-  <mat-sidenav #sidenav class="sidenav" mode="side" [opened]="sidebarOpened">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/" routerLinkActive="active-link">🏠 Início</a>
-      <a mat-list-item routerLink="/cards" routerLinkActive="active-link">🃏 Ver Cards</a>
-      <a mat-list-item routerLink="/features" routerLinkActive="active-link">⭐ Ver Features</a>
-      <a mat-list-item routerLink="/magics" routerLinkActive="active-link">✨ Ver Magias</a>
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <!-- Conteúdo Principal -->
-  <mat-sidenav-content class="content">
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="toggleSidebar(sidenav)" class="menu-button">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>RPGZume</span>
-    </mat-toolbar>
-
-    <div class="main-content">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-toolbar color="primary" class="topbar">
+  <span>RPGZume</span>
+  <button mat-button routerLink="/" routerLinkActive="active-link">Início</button>
+  <button mat-button routerLink="/cards" routerLinkActive="active-link">Cards</button>
+  <button mat-button routerLink="/features" routerLinkActive="active-link">Features</button>
+  <button mat-button routerLink="/magics" routrLinkActive="active-link">Magias</button>
+</mat-toolbar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

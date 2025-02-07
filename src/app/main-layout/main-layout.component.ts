@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -13,10 +10,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     CommonModule,
-    MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule,
     MatButtonModule,
     RouterModule
   ],
@@ -24,9 +19,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent {
-  sidebarOpened = true;
-
-  toggleSidebar(sidenav: MatSidenav) {
-    sidenav.toggle();
+  toggleMenu() {
+    console.log('Menu button clicked'); // Pode ser expandido para ações futuras
   }
 }

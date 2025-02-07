@@ -10,7 +10,12 @@ export interface Card {
 
 export interface Feature {
   id: string;
-  card: Card;
+  type: string;
+  name: string;
+  resume: string;
+  description: string;
+  book: string;
+  page: number;
   prerequisites: string;
   benefit: string;
   normal: string;
@@ -19,9 +24,11 @@ export interface Feature {
 
 export interface Magic {
   id: string;
-  card: Card;
-  type: string;
+  name: string;
   level: string;
+  book: string;
+  page: number;
+  type: string;
   components: string;
   castTime: string;
   range: string;
@@ -30,4 +37,6 @@ export interface Magic {
   savingThrow: string;
   spellResistance: string;
   effect: string;
+  resume: string;
+  description: string;
 }

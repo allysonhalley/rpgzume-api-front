@@ -1,26 +1,34 @@
-.app-container {
-  height: 100vh;
+.topbar {
   display: flex;
+  align-items: center;
+  padding: 0 16px;
 }
 
-.sidenav {
-  width: 250px;
-}
-
-.content {
+.spacer {
   flex-grow: 1;
-  padding: 20px;
-}
-
-.main-content {
-  padding: 20px;
 }
 
 .menu-button {
   margin-right: 16px;
 }
 
-.active-link {
-  font-weight: bold;
-  color: #ff9800;
+.main-content {.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 64px; // Garante que o conteúdo não fique escondido pela toolbar
+}
+
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 64px; // Garante que o conteúdo não fique escondido pela toolbar
 }

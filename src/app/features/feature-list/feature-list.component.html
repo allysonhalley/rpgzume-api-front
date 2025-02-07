@@ -1,1 +1,27 @@
-<p>feature-list works!</p>
+<mat-toolbar color="primary">
+  <span>Feature List</span>
+</mat-toolbar>
+
+<mat-list role="list">
+  <mat-list-item *ngFor="let feature of features" role="listitem">
+    <div mat-line>
+      <mat-card class="card" appearance="outlined">
+        <mat-card-header base="elevated-container-shape">
+          <mat-card-title>{{ feature.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <p><strong>Descrição: </strong>{{ feature.description }}</p>
+          <p><strong>Pré-requisitos: </strong>{{ feature.prerequisites }}</p>
+          <p><strong>Benefício: </strong>{{ feature.benefit }}</p>
+          <p><strong>Normal: </strong>{{ feature.normal }}</p>
+          <p><strong>Especial: </strong>{{ feature.special }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          Livro: {{ feature.book }} || Página: {{ feature.page }}
+        </mat-card-footer>
+      </mat-card>
+    </div>
+    <br>
+  </mat-list-item>
+</mat-list>

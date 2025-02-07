@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { FeatureService } from '../../core/services/feature.service';
+import { Card, Feature } from '../../core/models/models';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-feature-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, MatToolbarModule, MatListModule, MatCardModule, MatDividerModule],
   templateUrl: './feature-list.component.html',
-  styleUrl: './feature-list.component.scss'
+  styleUrls: ['../../shared/shared-list.component.scss']
 })
-export class FeatureListComponent {
+export class FeatureListComponent implements OnInit {
+  features: Feature[] = [];
 
+  constructor(private featureService: FeatureService) {}
+
+  async ngOnInit() {
+    try {
+      const response = await this.featureService.getAllFeatures();
+      this.features = response.data || [];
+    } catch (error) {
+      console.error('Erro ao buscar features:', error);
+    }
+  }
 }

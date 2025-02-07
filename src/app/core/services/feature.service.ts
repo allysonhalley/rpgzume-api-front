@@ -2,14 +2,14 @@ import axios from 'axios';
 import { Injectable } from '@angular/core';
 import { Feature } from '../models/models';
 
-const API_BASE_URL = 'http://localhost:8080/features';
+const API_BASE_URL = 'http://localhost:8080/api/features';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FeatureService {
-  async getAllFeatures(page = 0, size = 20) {
-    return axios.get(`${API_BASE_URL}?page=${page}&size=${size}`);
+  async getAllFeatures() {
+    return axios.get(`${API_BASE_URL}`);
   }
 
   async getFeatureById(id: string) {

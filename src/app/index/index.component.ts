@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import {IndexRoutingModule} from "./index-routing.module";
 
 @Component({
   selector: 'app-index',
@@ -13,3 +14,9 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent {}
+
+@NgModule({
+  declarations: [],
+  imports: [CommonModule, IndexRoutingModule]
+})
+export class IndexModule {}
