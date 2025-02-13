@@ -3,21 +3,23 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { FeatureService } from '../../core/services/feature.service';
-import { Card, Feature } from '../../core/models/models';
+import { Feature } from '../../core/models/models';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatIcon} from "@angular/material/icon";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-feature-list',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatListModule, MatCardModule, MatDividerModule],
+  imports: [CommonModule, MatToolbarModule, MatListModule, MatCardModule, MatDividerModule, MatIcon],
   templateUrl: './feature-list.component.html',
-  styleUrls: ['../../shared/shared-list.component.scss']
+  styleUrls: ['./feature-list.component.scss']
 })
 export class FeatureListComponent implements OnInit {
   features: Feature[] = [];
 
-  constructor(private featureService: FeatureService) {}
+  constructor(private featureService: FeatureService, private router: Router) {}
 
   async ngOnInit() {
     try {
@@ -26,5 +28,8 @@ export class FeatureListComponent implements OnInit {
     } catch (error) {
       console.error('Erro ao buscar features:', error);
     }
+  }
+  addFeature() {
+    this.router.navigate(['/features/new']);
   }
 }

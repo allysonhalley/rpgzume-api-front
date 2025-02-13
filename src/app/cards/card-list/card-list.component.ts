@@ -20,7 +20,7 @@ import {MatDivider} from "@angular/material/divider";
   standalone: true,
   imports: [CommonModule, MatToolbarModule, MatListModule, MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle, MatDivider, MatCardFooter],
   templateUrl: './card-list.component.html',
-  styleUrls: ['../../shared/shared-list.component.scss']
+  styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
   cards: Card[] = [];

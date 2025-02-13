@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MagicDetailComponent } from './magic-detail.component';
+import { FeatureFormComponent } from './feature-form.component';
 
-describe('MagicDetailComponent', () => {
-  let component: MagicDetailComponent;
-  let fixture: ComponentFixture<MagicDetailComponent>;
+describe('FeatureFormComponent', () => {
+  let component: FeatureFormComponent;
+  let fixture: ComponentFixture<FeatureFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MagicDetailComponent]
+      imports: [FeatureFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MagicDetailComponent);
+    fixture = TestBed.createComponent(FeatureFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
